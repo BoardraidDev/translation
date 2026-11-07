@@ -1,0 +1,11 @@
+name: Public documentation checks
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - run: python3 tools/check.py --self-test
+      - run: python3 tools/check.py

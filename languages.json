@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "baseLanguage": "en_us",
+  "sourceRevision": "a2e659bda9ff63a0050a94bf620c1310dd19fdb3",
+  "languages": [
+    {
+      "code": "zh_cn",
+      "name": "简体中文",
+      "status": "ready"
+    },
+    {
+      "code": "zh_tw",
+      "name": "繁體中文",
+      "status": "ready"
+    },
+    {
+      "code": "en_us",
+      "name": "English (US)",
+      "status": "ready"
+    },
+    {
+      "code": "no_no",
+      "name": "Norsk (Bokmål)",
+      "status": "ready"
+    }
+  ]
+}
