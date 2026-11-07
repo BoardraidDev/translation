@@ -27,6 +27,9 @@ def placeholders(value):
 
 
 def validate(root):
+    root = root.resolve()
+    assert not (root / 'languages.json').is_symlink()
+    assert not (root / 'client').is_symlink()
     registry = load(root / 'languages.json')
     assert registry['schemaVersion'] == 1 and registry['baseLanguage'] == 'en_us'
     base = load(root / 'client/en_us.json')
@@ -42,7 +45,9 @@ def validate(root):
         assert not any(ord(c) < 32 for c in entry['name']), 'Control character in display name'
         assert entry['status'] in {'ready', 'draft'}
         codes.add(code)
-        values = load(root / 'client' / (code + '.json'))
+        path = root / 'client' / (code + '.json')
+        assert not path.is_symlink() and path.resolve().is_relative_to(root)
+        values = load(path)
         assert isinstance(values, dict) and set(values) <= set(base), 'Unknown translation key'
         if entry['status'] == 'ready' or code in PROTECTED:
             assert set(values) == set(base), 'Ready language must be complete'

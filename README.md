@@ -19,7 +19,7 @@
 ## 本地检查与预览
 `python tools/validate.py --self-test` 运行错误键、占位符、重复键和不完整语言的自证。
 `python tools/validate.py` 校验全部语言并显示覆盖率。
-`python tools/pack.py --output ../translations-preview.zip` 生成 Minecraft 1.16.1 资源包。将它放入测试实例的 resourcepacks 后启用，用对应的游戏语言预览翻译；草稿不一定出现在 BoardRaid 独立语言菜单。
+`python tools/pack.py --output ../translations-preview.zip` 生成 Minecraft 1.16.1 资源包。将它放入未固定模组界面语言的全新测试实例的 resourcepacks 后启用，用对应的游戏语言预览翻译；草稿不一定出现在 BoardRaid 独立语言菜单。
 资源包只含本项目语言 JSON，不含游戏文件或可执行代码。请在未进行正式比赛的实例预览，不承诺未经审核资源包能通过竞技自检。
 ## i18n 边界
 语言只改变显示，不改变任务 ID、物品 ID、判定或协议。模组语言独立于原版语言；翻译不完整时显示英文回退，不编造目标或数值。
